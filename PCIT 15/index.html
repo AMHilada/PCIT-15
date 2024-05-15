@@ -73,10 +73,10 @@
         function handleNumber(value) {
             // alert(value);
             let newValue = value;
-            if(!calc.isInitial){
-                newValue = calc.current + value; 
+            if (!calc.isInitial) {
+                newValue = calc.current + value;
             }
-            setCalc({current: newValue, isInitial:false});
+            setCalc({ current: newValue, isInitial: false });
         }
         // ---useState ---
         // const [display, setDisplay] = React.useState('0');
@@ -86,6 +86,17 @@
             isInitial: true,
             preOp: ''
         });
+
+        // ---handle clear button ---
+        function handleClear(){
+            setCalc({
+            current: '0',
+            total: '',
+            isInitial: true,
+            preOp: ''
+            });
+        }
+        
         return (
             <div className="calculator">
                 <div className="display">{calc.current}</div>
